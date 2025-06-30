@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake Game</title>
+
+  <style>
+    canvas { border: 2px solid black; display: block; margin: 20px auto; }
+    body { text-align: center; font-family: sans-serif; }
+    #restart-btn { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🐍 Snake Game</h1>
+   <p>Score: <span id="score">0</span> | High Score: <span id="high-score">0</span></p>
+
+  <!-- Speed Selection -->
+  <form id="speed-form">
+    <label>Speed: </label>
+    <select id="speed">
+      <option value="150">🐢 Slow</option>
+      <option value="120" selected>🚶 Normal</option>
+      <option value="50">🏃 Fast</option>
+    </select>
+    <button type="submit">Start Game</button>
+  </form>
+
+  <!-- Restart Button -->
+  <button id="restart-btn" style="display:none;">🔄 Restart Game</button>
+
+  <!-- Canvas -->
+  <canvas id="game" width="400" height="400"></canvas>
+  <p>Use Arrow Keys to Move</p>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
